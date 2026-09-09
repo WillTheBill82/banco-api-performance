@@ -1,5 +1,5 @@
 import http from 'k6/http';
-import { sleep } from 'k6';
+import { sleep, check } from 'k6';
 
 export const options = {
     iterations: 10,
@@ -18,7 +18,13 @@ export default function () {
         },
     };
 
-    http.post(url, payload, params);
+    const res = http.post(url, payload, params);
+
+    check(res, {
+        'status is 200': (r) => r.status === 200,
+        'response body contains token': (r) => r.body.includes('token'),
+        'Validar que o token é string': (r) => typeof JSON.parse(r.body).token === 'string',
+    });
 
     sleep(1);
     }
