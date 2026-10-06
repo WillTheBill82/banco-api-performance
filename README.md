@@ -1,9 +1,4 @@
-# banco-api-performance
-Analisei o repositório [banco-api-performance no GitHub](https://github.com/WillTheBill82/banco-api-performance?utm_source=chatgpt.com). A estrutura atualmente publicada contém os grupos `config`, `fixtures`, `helpers`, `tests` e `utils`, além de `.gitignore`, `README.md` e `package-lock.json`. ([GitHub][1])
 
-Também considerei a forma recomendada pelo k6 para execução local e uso de variáveis de ambiente. O k6 permite passar valores com `-e NOME=valor` e os scripts podem acessá-los por `__ENV`. ([Grafana Labs][2])
-
-Abaixo está uma versão de README já estruturada para você colocar diretamente no projeto:
 
 # banco-api-performance
 
